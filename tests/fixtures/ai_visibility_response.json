@@ -1,0 +1,175 @@
+{
+  "type": "response",
+  "message": "AI visibility audit successful",
+  "payload": {
+    "url": "https://www.example.com/",
+    "finalUrl": "https://www.example.com/",
+    "domain": "example.com",
+    "score": {
+      "overall": 84,
+      "pillars": {"retrievability": 0, "access": 100, "readability": 90, "structure": 80, "answerability": 76, "trust": 70, "offsite": 0},
+      "scoredPillars": ["access", "readability", "structure", "answerability", "trust"],
+      "blockers": [],
+      "uncapped": 84
+    },
+    "checks": [
+      {
+        "id": "ai_crawlers_allowed",
+        "pillar": "access",
+        "weight": 10,
+        "status": "pass",
+        "title": "AI crawlers can fetch this URL",
+        "detail": "All 24 AI crawlers are allowed on this path.",
+        "evidence": {"blocked": []}
+      }
+    ],
+    "topFixes": [
+      {
+        "id": "first_hand",
+        "status": "warn",
+        "title": "The page reports first-hand work",
+        "fix": "Add what only you can say: a measurement you took, with the number."
+      }
+    ],
+    "access": {"robotsTxtFound": true, "robotsTxtUrl": "https://www.example.com/robots.txt", "blockedCritical": [], "llmsTxt": false},
+    "content": {"contentOnlyInJs": null, "fkGrade": 11},
+    "structure": {"jsonldTypes": ["Organization", "WebPage"], "hasAuthor": false},
+    "retrievability": null,
+    "offsite": null,
+    "citations": {
+      "queries": [
+        "What is a good tool to convert web pages to Markdown?",
+        "How do I track brand mentions in AI answers?"
+      ],
+      "engines": ["openai", "perplexity", "aio"],
+      "engineNotes": {
+        "openai": "OpenAI Responses API with the web_search tool, an approximation of ChatGPT search, not chatgpt.com itself.",
+        "perplexity": "Perplexity Sonar API, the same retrieval and citations as perplexity.ai.",
+        "aio": "Google AI Overview, read from a live Google SERP."
+      },
+      "locale": {"country": "US", "lang": null, "openaiLocation": "approximate-country"},
+      "rows": [
+        {
+          "query": "What is a good tool to convert web pages to Markdown?",
+          "engine": "openai",
+          "usage": {"model": "example-model", "inputTokens": 1200, "outputTokens": 300, "searches": 1},
+          "cited": true,
+          "mentioned": true,
+          "ourUrls": ["https://www.example.com/markdown/"],
+          "rank": 2,
+          "allDomains": ["docs.example.org", "example.com", "competitor-one.example"],
+          "citedUrls": [
+            "https://docs.example.org/guide/markdown",
+            "https://www.example.com/markdown/",
+            "https://competitor-one.example/convert"
+          ],
+          "citations": [
+            {"position": 1, "url": "https://docs.example.org/guide/markdown", "domain": "docs.example.org"},
+            {"position": 2, "url": "https://www.example.com/markdown/", "domain": "example.com"},
+            {"position": 3, "url": "https://competitor-one.example/convert", "domain": "competitor-one.example"}
+          ],
+          "competitors": ["competitor-one.example"],
+          "answerText": "Several tools convert pages to Markdown. Example offers a converter ([example.com](https://www.example.com/markdown/)).",
+          "answerExcerpt": "Several tools convert pages to Markdown. Example offers a converter ([example.com](https://www.example.com/markdown/))."
+        },
+        {
+          "query": "What is a good tool to convert web pages to Markdown?",
+          "engine": "perplexity",
+          "cited": false,
+          "mentioned": true,
+          "ourUrls": [],
+          "rank": null,
+          "allDomains": ["docs.example.org", "competitor-two.example"],
+          "citedUrls": ["https://docs.example.org/guide/markdown", "https://competitor-two.example/"],
+          "citations": [
+            {"position": 1, "url": "https://docs.example.org/guide/markdown", "domain": "docs.example.org"},
+            {"position": 2, "url": "https://competitor-two.example/", "domain": "competitor-two.example"}
+          ],
+          "competitors": [],
+          "answerText": "Popular options include several open-source converters; Example is also used.",
+          "answerExcerpt": "Popular options include several open-source converters; Example is also used."
+        },
+        {
+          "query": "What is a good tool to convert web pages to Markdown?",
+          "engine": "aio",
+          "cited": false,
+          "mentioned": false,
+          "ourUrls": [],
+          "rank": null,
+          "allDomains": [],
+          "citedUrls": [],
+          "citations": [],
+          "competitors": [],
+          "answerText": "",
+          "answerExcerpt": "",
+          "error": "no AI Overview for this query"
+        },
+        {
+          "query": "How do I track brand mentions in AI answers?",
+          "engine": "openai",
+          "usage": {"model": "example-model", "inputTokens": 1100, "outputTokens": 280, "searches": 1},
+          "cited": false,
+          "mentioned": false,
+          "ourUrls": [],
+          "rank": null,
+          "allDomains": ["competitor-one.example", "blog.example.net"],
+          "citedUrls": ["https://competitor-one.example/ai-mentions", "https://blog.example.net/tracking"],
+          "citations": [
+            {"position": 1, "url": "https://competitor-one.example/ai-mentions", "domain": "competitor-one.example"},
+            {"position": 2, "url": "https://blog.example.net/tracking", "domain": "blog.example.net"}
+          ],
+          "competitors": ["competitor-one.example"],
+          "answerText": "Ask the assistants a fixed list of questions on a schedule and record which sources they cite.",
+          "answerExcerpt": "Ask the assistants a fixed list of questions on a schedule and record which sources they cite."
+        },
+        {
+          "query": "How do I track brand mentions in AI answers?",
+          "engine": "perplexity",
+          "cited": false,
+          "mentioned": false,
+          "ourUrls": [],
+          "rank": null,
+          "allDomains": ["blog.example.net"],
+          "citedUrls": ["https://blog.example.net/tracking"],
+          "citations": [{"position": 1, "url": "https://blog.example.net/tracking", "domain": "blog.example.net"}],
+          "competitors": [],
+          "answerText": "Use a monitoring tool that asks assistants your questions and logs the citations.",
+          "answerExcerpt": "Use a monitoring tool that asks assistants your questions and logs the citations."
+        },
+        {
+          "query": "How do I track brand mentions in AI answers?",
+          "engine": "aio",
+          "cited": false,
+          "mentioned": false,
+          "ourUrls": [],
+          "rank": null,
+          "allDomains": [],
+          "citedUrls": [],
+          "citations": [],
+          "competitors": [],
+          "answerText": "",
+          "answerExcerpt": "",
+          "error": "no AI Overview for this query"
+        }
+      ],
+      "coverage": {
+        "openai": {"asked": 2, "cited": 1, "mentioned": 1},
+        "perplexity": {"asked": 2, "cited": 0, "mentioned": 1}
+      },
+      "usage": {"openai": {"model": "example-model", "inputTokens": 2300, "outputTokens": 580, "searches": 2, "calls": 2}},
+      "shareOfVoice": [
+        {"domain": "docs.example.org", "times": 2, "share": 0.5, "ours": false, "competitor": false},
+        {"domain": "competitor-one.example", "times": 2, "share": 0.5, "ours": false, "competitor": true},
+        {"domain": "blog.example.net", "times": 2, "share": 0.5, "ours": false, "competitor": false},
+        {"domain": "example.com", "times": 1, "share": 0.25, "ours": true, "competitor": false},
+        {"domain": "competitor-two.example", "times": 1, "share": 0.25, "ours": false, "competitor": false}
+      ],
+      "losingTo": [{"domain": "docs.example.org", "times": 1}],
+      "skipped": {}
+    },
+    "durationMs": 19868,
+    "geo": {"country": "us"},
+    "billing": {"citation_calls_billed": 4, "offsite_serps_billed": 0}
+  },
+  "pagination": {}
+}

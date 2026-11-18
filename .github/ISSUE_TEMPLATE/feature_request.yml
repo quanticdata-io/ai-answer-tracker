@@ -1,0 +1,14 @@
+name: Feature request
+description: A report, an option or an export you need
+labels: [enhancement]
+body:
+  - type: textarea
+    id: need
+    attributes:
+      label: What do you need and why?
+    validations:
+      required: true
+  - type: textarea
+    id: example
+    attributes:
+      label: Example output you would like to see

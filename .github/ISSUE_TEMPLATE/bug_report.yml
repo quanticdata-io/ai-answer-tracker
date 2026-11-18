@@ -1,0 +1,28 @@
+name: Bug report
+description: Wrong numbers in a report, a crash or an export problem
+labels: [bug]
+body:
+  - type: markdown
+    attributes:
+      value: Never paste an API key. Replace it with `qd_live_...`. Remove questions or answers you do not want to make public.
+  - type: input
+    id: version
+    attributes:
+      label: Version, Python and OS
+      placeholder: ai-answer-tracker 0.1.0, Python 3.12, Windows 11
+    validations:
+      required: true
+  - type: textarea
+    id: command
+    attributes:
+      label: Command you ran
+      render: shell
+    validations:
+      required: true
+  - type: textarea
+    id: result
+    attributes:
+      label: What happened and what you expected
+      description: If a number in the report looks wrong, attach the JSON report (`report -f json`) with private content removed.
+    validations:
+      required: true
