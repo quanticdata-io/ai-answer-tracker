@@ -43,8 +43,8 @@
       ],
       "engines": ["openai", "perplexity", "aio"],
       "engineNotes": {
-        "openai": "OpenAI Responses API with the web_search tool, an approximation of ChatGPT search, not chatgpt.com itself.",
-        "perplexity": "Perplexity Sonar API, the same retrieval and citations as perplexity.ai.",
+        "openai": "An OpenAI model with web search, an approximation of ChatGPT search.",
+        "perplexity": "Perplexity.",
         "aio": "Google AI Overview, read from a live Google SERP."
       },
       "locale": {"country": "US", "lang": null, "openaiLocation": "approximate-country"},
