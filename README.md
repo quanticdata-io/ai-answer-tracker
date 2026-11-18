@@ -189,6 +189,7 @@ More in [`examples/`](examples/).
 - AI answers vary from one request to the next even for the same question. One run is a sample: look at trends over several runs and many questions before drawing conclusions.
 - `openai` and `anthropic` are model APIs with web search, not the consumer apps; `deepseek` answers from a Google top 10, not from DeepSeek's own product. The API says so in `engineNotes`.
 - An engine can return no answer for a question, or be unavailable for a while. Those pairs are kept as `!` and excluded from the rates.
+- Engine availability depends on the service. In our checks on 2026-11-18 only `openai` returned answers; the other engines returned error rows ("not configured" or "retry"). Run with `--dry-run`, then a single question, to see which engines answer for your account before scheduling a tracker.
 - "Cited" is about the domain of `url`. To track several sites, use one tracker per site.
 - Results depend on the locale (`country`) and on the day; the tool does not try to reproduce one user's personalised answers.
 
