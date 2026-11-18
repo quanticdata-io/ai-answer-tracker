@@ -1,0 +1,14 @@
+# Example tracker. Replace the URL, brand and questions with your own before a real run:
+#   ai-answer-tracker run examples/tracker.toml --dry-run
+# Every (question x engine) pair that answers is billed: https://quanticdata.io/pricing/
+name = "example"
+url = "https://www.example.com/"
+brand = "Example"
+competitors = ["competitor-one.example"]
+engines = ["openai", "perplexity", "aio"]
+country = "us"
+queries = [
+  "What is a good tool to convert web pages to Markdown?",
+  "How do I track brand mentions in AI answers?",
+  "Which APIs return Google search results as JSON?",
+]
